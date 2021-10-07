@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+     
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <!-- <a-plane position="0 -1 -4" rotation="-90 0 0" width="400" height="400" color="white"></a-plane> -->
+      <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="400" height="100" src="clouds2.jpg"></a-plane> -->
+      <!-- <a-plane position="0 700 -4" rotation="0 0 0" width="1920" height="1080" src="treesEdit.mov"></a-plane> -->
+
+      <a-sky src="clouds2.jpg" ></a-sky>
+      <a-assets>
+        <a-asset-item id="cow_man" src="cowMan.glb" ></a-asset-item>
+        <a-asset-item id="pose1" src="pose1.glb" ></a-asset-item>
+        <a-asset-item id="pose2" src="pose2.glb" ></a-asset-item>
+        <a-asset-item id="pose3" src="pose3.glb" ></a-asset-item>
+        <a-asset-item id="tree" src="tree.glb" ></a-asset-item>
+        <video id="top" autoplay loop="true" src="tree.mp4"></video>
+        <video id="treeTop" autoplay loop="true" src="tree.mp4"></video>
+        <video id="floor" autoplay loop="true" src="hand.mp4"></video>
+
+      </a-assets>
+
+      <!-- LIGHTS -->
+      <a-entity light="type: ambient; color: #e8ecff"></a-entity>
+      <a-entity light="type: directional; color: #e8ecff; intensity: 6" position="0 -1 1" scale="40 40 40"></a-entity>
+
+      <a-entity light="type: directional; color: ##ffde7d; intensity: 6" position="0 4000 0" scale="40 40 40"></a-entity>
+      <!-- AUDIO -->
+      <a-entity id="music" geometry="primitive: plane" material="color: blue" position="0 -1 -4" 
+      sound="src: url(moojic.wav); autoplay: true loop: true"></a-entity>
+      <!-- MODELS -->
+      <a-entity gltf-model="#cow_man" scale="1 1 1" position="0 0 -15" animation-mixer></a-entity>
+      <a-entity gltf-model="#pose1" scale="1 1 1" position="0 0 50" rotation="0 210 0" animation-mixer></a-entity>
+      <a-entity gltf-model="#pose2" scale="1 1 1" position="-50 0 -50" animation-mixer></a-entity>
+      <a-entity gltf-model="#pose3" scale="1 1 1" position="0 0 100" animation-mixer></a-entity>
+      <a-entity gltf-model="#tree" scale="20 70 20" position="0 0 0" animation-mixer></a-entity>  
+      <a-video src="#top" width="1280" height="700" position="0 -1 0" rotation="-90 0 0"></a-video>
+      <a-video src="#treeTop" width="20" height="700" position="0 -1 -13" rotation="0 0 0"></a-video>
+      <a-video src="#floor" width="1280" height="700" position="0 400 0" rotation="90 0 0"></a-video>
+
+    </a-scene>
+  </body>
+</html>
